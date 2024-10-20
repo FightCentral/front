@@ -14,7 +14,7 @@ jobs:
             git config --global user.name "fightcentral"
             git config --global user.email "fightcentral667@gmail.com"
             git config --global credential.helper cache
-            git clone https://${{secrets.API_TOKEN_GITHUB}}@github.com/fightentral6/fightcentral-web web
+            git clone https://${{secrets.API_TOKEN_GITHUB}}@github.com/fightcentral6/fightcentral-web web
             rsync -av . web --exclude web --exclude .git --exclude .github
             cd web
             git pull
