@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const EuroEx = localFont({
-  src: "./fonts/EurostileExtd.otf",
-  variable: "--font-euro-ex",
-});
+import { Teko, Roboto_Flex } from 'next/font/google'
 
-const Sternbach = localFont({
-  src: "./fonts/Sternbach.otf",
-  variable: "--font-sternbach",
-});
+const teko = Teko({
+  subsets: ['latin'],
+  variable: '--font-teko'
+})
+
+const roboto = Roboto_Flex({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${EuroEx.variable} ${Sternbach.variable} antialiased`}
+        className={`${teko.variable} ${roboto.variable} antialiased`}
       >
         {children}
       </body>
