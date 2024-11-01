@@ -57,3 +57,21 @@
   z-index: -1;
   border-radius: 4px; /* Même radius que le ::before */
 }
+
+.textInput {
+  border: 1px solid hsl(var(--secondary));
+
+  &:placeholder-shown {
+    border: 1px solid transparent;
+    border-bottom: 1px solid hsl(var(--secondary));
+    transition: all 0.2s ease-in;
+  }
+
+  &:focus, &:focus-visible {
+    border: 1px solid hsl(var(--secondary));
+  }
+}
+
+.textInputError {
+  border: 1px solid hsl(var(--destructive));
+}

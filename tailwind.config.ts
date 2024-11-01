@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -9,6 +11,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+			fontFamily: {
+        teko: ['var(--font-teko)', ...fontFamily.sans],
+        roboto: ['var(--font-roboto)', ...fontFamily.sans],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
